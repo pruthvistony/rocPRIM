@@ -91,7 +91,7 @@ if(BUILD_BENCHMARK)
 endif()
 
 # Find or download/install rocm-cmake project
-find_package(ROCM QUIET CONFIG PATHS /opt/rocm)
+find_package(ROCM QUIET CONFIG PATHS ${CMAKE_INSTALL_PREFIX})
 if(NOT ROCM_FOUND)
   set(rocm_cmake_tag "master" CACHE STRING "rocm-cmake tag to download")
   file(

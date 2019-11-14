@@ -31,7 +31,7 @@ project(rocprim LANGUAGES CXX)
 # CMake modules
 list(APPEND CMAKE_MODULE_PATH
   ${CMAKE_CURRENT_SOURCE_DIR}/cmake
-  ${HIP_PATH}/cmake /opt/rocm/hip/cmake # FindHIP.cmake
+  ${CMAKE_INSTALL_PREFIX}/hip/cmake ${HIP_PATH}/cmake # FindHIP.cmake
 )
 
 # Set a default build type if none was specified

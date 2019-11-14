@@ -29,14 +29,14 @@ project(rocprim_package_install_test CXX)
 # CMake modules
 list(APPEND CMAKE_MODULE_PATH
   ${CMAKE_CURRENT_SOURCE_DIR}/../../cmake
-  ${HIP_PATH}/cmake /opt/rocm/hip/cmake # FindHIP.cmake
+  ${HIP_PATH}/cmake ${CMAKE_INSTALL_PREFIX}/hip/cmake # FindHIP.cmake
 )
 
 # Verify that hcc compiler is used on ROCM platform
 include(VerifyCompiler)
 
 # Find rocPRIM
-find_package(rocprim REQUIRED CONFIG HINTS ${rocprim_DIR} PATHS "/opt/rocm/rocprim")
+find_package(rocprim REQUIRED CONFIG HINTS ${rocprim_DIR} PATHS "${CMAKE_INSTALL_PREFIX}/rocprim")
 
 # Build CXX flags
 set(CMAKE_CXX_STANDARD 11)
